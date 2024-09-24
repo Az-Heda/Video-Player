@@ -1,0 +1,5 @@
+videos/
+
+[LIN|WIN]*_*
+*.mp4
+*.json

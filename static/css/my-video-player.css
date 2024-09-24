@@ -1,0 +1,102 @@
+:root {
+	--my-bs-success:      #198754;
+	--my-bs-info:         #0dcaf0;
+	--my-bs-warning:      #ffc107;
+	--my-bs-danger:       #dc3545;
+	--my-bs-border-color: #dee2e6;
+
+
+	--border-animation-duration: 2s;
+	--border-width: 2px;
+}
+
+form > div.row > div {
+	padding: 0 1px;
+}
+
+.w100 {
+	width: 100%;
+}
+
+label {
+	color: var(--anime-card-color)
+}
+
+input[type="text"] {
+	background-color: inherit;
+	color: var(--anime-card-color);
+	border: var(--border-width) solid var(--my-bs-border-color);
+    border-radius: 1em;
+}
+
+input[type="text"]:hover,
+input[type="text"]:active,
+input[type="text"]:focus,
+input[type="text"]::placeholder {
+	background-color: inherit;
+	color: var(--anime-card-color);
+}
+
+input[type="text"].success {
+	border: var(--border-width) solid var(--my-bs-success);
+	animation-name: border-animation-success;
+	animation-duration: var(--border-animation-duration);
+	animation-iteration-count: 1;
+}
+
+input[type="text"].info {
+	border: var(--border-width) solid var(--my-bs-info);
+	animation-name: border-animation-info;
+	animation-duration: var(--border-animation-duration);
+	animation-iteration-count: 1;
+}
+
+input[type="text"].warning {
+	border: var(--border-width) solid var(--my-bs-warning);
+	animation-name: border-animation-warning;
+	animation-duration: var(--border-animation-duration);
+	animation-iteration-count: 1;
+	animation-delay: 1s;
+	text-decoration: line-through;
+}
+
+input[type="text"].danger  {
+	animation-name: border-animation-danger;
+	animation-duration: var(--border-animation-duration);
+	animation-iteration-count: 1;
+	text-decoration: line-through;
+}
+
+div:has(> input[type="text"].not-valid) {
+	animation-name: shake;
+	animation-duration: 0.4s;
+	animation-iteration-count: 1;
+}
+
+@keyframes border-animation-success {
+	0% { border-color: var(--my-bs-success); }
+	100% { border-color: var(--my-bs-border-color); }
+}
+
+@keyframes border-animation-info {
+	0% { border-color: var(--my-bs-info); }
+	100% { border-color: var(--my-bs-border-color); }
+}
+
+@keyframes border-animation-warning {
+	0% { border-color: var(--my-bs-warning); }
+	100% { border-color: var(--my-bs-border-color); }
+}
+
+@keyframes border-animation-danger {
+	0% { border-color: var(--my-bs-danger); }
+	100% { border-color: var(--my-bs-border-color); }
+}
+
+@keyframes shake {
+	0% { transform: translateX(0) }
+	25% { transform: translateX(3px) }
+	50% { transform: translateX(-3px) }
+	75% { transform: translateX(3px) }
+	100% { transform: translateX(0) }
+}
